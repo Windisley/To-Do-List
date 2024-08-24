@@ -1,0 +1,259 @@
+:root{
+    --color-primary: #404040;
+    --color-secundary: #D9D9D9;
+    --color-terciary: #595959;
+    --color-for: #BFBFBF;
+    --background: #f1f1f1;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+}
+
+body{
+    font-size: 65%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    background-color: var(--background);
+
+}
+
+main section{
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+main section .boxcontainer{
+    width: 90%;
+    max-width: 800px; 
+    height: 100%;
+    max-height: 100%;
+    min-height: 450px;
+    margin: 0 auto;
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    border: 1px solid var(--color-secundary);
+    position: relative;
+    border-radius: 8px;
+    
+}
+
+main section .boxcontainer .boxtitle{
+  position: absolute;
+  top: 1rem;
+  padding-bottom: 5rem;
+}
+
+
+main section .boxcontainer .boxtitle h1{
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    letter-spacing: .2px;
+}
+
+.boxwriter{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.boxwriter input{
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    padding: 7px 28px;
+    border: 1px solid var(--color-secundary);
+    text-transform: capitalize;
+
+}
+.boxwriter input::placeholder{
+    text-align: start;
+    text-transform: capitalize;
+    font-size: .7rem;
+}
+
+.boxwriter button{
+    width: 100%;
+    max-width: 100px;
+    margin: 0 auto;
+    padding: 7px 21px;
+    border: 1px solid var(--color-terciary);
+    text-transform: capitalize;
+    cursor: pointer;
+    background-color: var(--color-secundary);
+    z-index: 2;
+}
+
+.boxwriter button:hover{
+    background-color: var(--color-primary);
+    color: var(--color-secundary);
+}
+
+.boxlist{
+    width: 100%;
+   
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    position: relative;
+}
+  
+.boxlist .contlist{
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    
+
+}
+
+
+.boxlist .contlist div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.boxlist .contlist div .list{
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: capitalize;
+  width: 100%;
+  max-width: 500px;
+  text-wrap: wrap;
+  margin: 0 auto;
+  text-align: start;
+  animation: rotatelist .6s 1 linear;
+  position: relative;
+
+}
+
+.listafter::after{
+ content: "";
+ position: absolute;
+ background-color: black;
+ width: 100%;
+ height: 2px;
+ margin: 0 auto;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+
+}
+
+@keyframes rotatelist{
+    0%{
+       transform: rotate(45deg);
+       opacity: 0;
+    }
+   
+    50%{
+       transform: rotate(-45deg);
+       opacity: .5;
+
+    }
+   
+    100%{
+       transform: rotate(0deg);
+       opacity: 1;
+    }
+   }
+
+.boxlist .contlist div .bi-trash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--color-terciary);
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 4px;
+}
+
+.boxlist .contlist div .bi-check-square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--color-terciary);
+    cursor: pointer;
+   padding: 4px;
+}
+
+.boxlist .contlist div .bi-trash:hover{
+    color: red;
+    animation: rotate .5s 1 linear;
+}
+
+.boxlist .contlist div .bi-check-square:hover{
+    color: green;
+    animation: rotate .5s 1 linear;
+}
+
+
+@keyframes rotate{
+ 0%{
+    transform: rotate(45deg);
+ }
+
+ 50%{
+    transform: rotate(-45deg);
+ }
+
+ 100%{
+    transform: rotate(0deg);
+
+ }
+}
+
+@media screen and (max-width: 430px) {
+    .boxwriter{
+        flex-direction: column;
+    }
+    #button{
+        max-width: 300px;
+    }
+}
